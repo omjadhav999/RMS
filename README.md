@@ -30,8 +30,8 @@ A Result Management System is a software application designed to facilitate the 
 
 
 ```
-$ git clone https://github.com/omjadhav999/jobportal.git
-$ cd jobportal
+$ git clone https://github.com/omjadhav999/rms.git
+$ cd rms
 ```
 
 ## Frontend
