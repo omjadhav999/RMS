@@ -1,8 +1,22 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+student-dashboard/
+├── backend/
+│   ├── controllers/
+│   │   └── studentController.js
+│   ├── models/
+│   │   └── studentModel.js
+│   ├── routes/
+│   │   └── studentRoutes.js
+│   ├── server.js
+│   └── .env
+├── frontend/
+│   ├── src/
+│   │   ├── api/
+│   │   │   └── resultApi.js
+│   │   ├── components/
+│   │   │   └── StudentDashboard.jsx
+│   │   ├── pages/
+│   │   │   └── Login.jsx
+│   │   ├── App.js
+│   │   └── index.js
+├── README.md
+└── package.json
