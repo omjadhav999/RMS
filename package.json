@@ -1,0 +1,10 @@
+{
+    "name": "rms-full-stack",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "cd client && npm install && npm run build",
+      "dev:client": "cd client && npm run dev",
+      "dev:server": "cd Server && npm run dev"
+    },
+    "workspaces": ["client", "Server"]
+  }
