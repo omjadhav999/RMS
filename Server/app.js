@@ -19,7 +19,6 @@ const corsOptions = {
         // List of allowed origins
         const allowedOrigins = [
             'http://localhost:5173',           // Local development
-            'http://localhost:3000',           // Alternative local port
             'https://rms-sand-eight.vercel.app' // Your Vercel deployment
         ];
         
