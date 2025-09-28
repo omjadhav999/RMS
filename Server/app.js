@@ -10,11 +10,34 @@ dotenv.config();
 // Initialize express app
 const app = express();
 
-app.use(cors({
-    origin: 'http://localhost:5173', 
-    methods: 'GET,POST,PUT,DELETE',
-    credentials: true
-}));
+// Dynamic CORS configuration
+const corsOptions = {
+    origin: (origin, callback) => {
+        // Allow requests with no origin (mobile apps, etc.)
+        if (!origin) return callback(null, true);
+        
+        // List of allowed origins
+        const allowedOrigins = [
+            'http://localhost:5173',           // Local development
+            'http://localhost:3000',           // Alternative local port
+            'https://rms-sand-eight.vercel.app' // Your Vercel deployment
+        ];
+        
+        // Allow any vercel.app domain for preview deployments
+        const isVercelDomain = origin.endsWith('.vercel.app');
+        
+        if (allowedOrigins.includes(origin) || isVercelDomain) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+    optionsSuccessStatus: 200 // For legacy browser support
+};
+
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON data
